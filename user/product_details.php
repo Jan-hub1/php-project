@@ -19,7 +19,7 @@ if (isset($_POST["submit1"])) {
     //pobierz produkt z tablicy
     $res3 = mysqli_query($link, "SELECT * FROM product WHERE id=$id");
     while ($row3 = mysqli_fetch_array($res3)) {
-        $img1 = $row3["product_image"];
+        $cid = $row3["id"];
         $nm = $row3["product_name"];
         $prize = $row3["product_price"];
         $qty = "1";
@@ -32,14 +32,14 @@ if (isset($_POST["submit1"])) {
         {
             $values11 = explode("__", $value);
             $found = 0;
-            if ($img1 == $values11[0])      //this is for check same cookies available or not if available then increase qty
+            if ($cid == $values11[0])      //this is for check same cookies available or not if available then increase qty
             {
                 //check here for quantity add in the cart for more than available quantity
                 $found = $found + 1;
                 $qty = $values11[3] + 1;
 
                 $tb_qty;
-                $res = mysqli_query($link, "SELECT * FROM product WHERE product_image='$img1'");
+                $res = mysqli_query($link, "SELECT * FROM product WHERE id='$cid'");
                 while ($row = mysqli_fetch_array($res)) {
                     $tb_qty = $row["product_qty"];
                 }
@@ -54,7 +54,7 @@ if (isset($_POST["submit1"])) {
                 } else {
 
                     $total = $values11[2] * $qty;
-                    setcookie("item[$name1]", $img1 . "__" . $nm . "__" . $prize . "__" . $qty . "__" . $total, time() + 1800);
+                    setcookie("item[$name1]", $cid . "__" . $nm . "__" . $prize . "__" . $qty . "__" . $total, time() + 1800);
                 }
             }
 
@@ -62,7 +62,7 @@ if (isset($_POST["submit1"])) {
 
         if ($found == 0) {
             $tb_qty;
-            $res = mysqli_query($link, "SELECT * FROM product WHERE product_image='$img1'");
+            $res = mysqli_query($link, "SELECT * FROM product WHERE id='$cid'");
             while ($row = mysqli_fetch_array($res)) {
                 $tb_qty = $row["product_qty"];
             }
@@ -76,14 +76,14 @@ if (isset($_POST["submit1"])) {
 
             } else {
 
-                setcookie("item[$d]", $img1 . "__" . $nm . "__" . $prize . "__" . $qty . "__" . $total, time() + 1800);//new
+                setcookie("item[$d]", $cid . "__" . $nm . "__" . $prize . "__" . $qty . "__" . $total, time() + 1800);//nowe ciasteczko
 
             }
         }
 
     } else {
         $tb_qty;
-        $res = mysqli_query($link, "SELECT * FROM product WHERE product_image='$img1'");
+        $res = mysqli_query($link, "SELECT * FROM product WHERE id='$cid'");
         while ($row = mysqli_fetch_array($res)) {
             $tb_qty = $row["product_qty"];
         }
@@ -96,7 +96,7 @@ if (isset($_POST["submit1"])) {
             <?php
 
         } else {
-            setcookie("item[$d]", $img1 . "__" . $nm . "__" . $prize . "__" . $qty . "__" . $total, time() + 1800);//new
+            setcookie("item[$d]", $cid . "__" . $nm . "__" . $prize . "__" . $qty . "__" . $total, time() + 1800);//new
         }
     }
 
@@ -413,6 +413,7 @@ if (isset($_POST["submit1"])) {
 
 				<?php
 				$res = mysqli_query($link, "SELECT * FROM product WHERE id=$id");
+				if(isset($_GET['id'])) { // jeśli istnieje zmienna id to pokaż towar
 				while ($row = mysqli_fetch_array($res)) {
 				?>
 
@@ -598,6 +599,7 @@ if (isset($_POST["submit1"])) {
 					<!--/category-tab-->
 					<?php
 				}
+			}
 					?>
 					<div class="recommended_items">
 						<!--recommended_items-->

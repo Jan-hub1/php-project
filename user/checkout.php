@@ -211,19 +211,24 @@ session_start();
 				$link = mysqli_connect("localhost", "root", "");
 				mysqli_select_db($link, "shop");
 				mysqli_query($link, "INSERT INTO client VALUES('','$_POST[firstname]','$_POST[lastname]','$_POST[email]','$_POST[resi]','$_POST[city]','$_POST[zipcode]','$_POST[cno]')");
+				mysqli_query($link, "INSERT INTO torder_id VALUES('')");
 
 				$res = mysqli_query($link, "SELECT id FROM client ORDER BY id DESC LIMIT 1");
 				while ($row = mysqli_fetch_array($res)) {
 					$client_id = $row["id"];
 				}
+				$res2 = mysqli_query($link, "SELECT id FROM torder_id ORDER BY id DESC LIMIT 1");
+				while ($row2 = mysqli_fetch_array($res2)) {
+					$order_id = $row2["id"];
+				}
+				foreach ($_COOKIE['item'] as $name1 => $value)   //this is for looping as per cookies if 3 cookies then loop move
+				{
+					$values11 = explode("__", $value);
+
+					mysqli_query($link, "INSERT INTO torder VALUES('','$order_id','$client_id','$values11[0]','$values11[2]','$values11[3]','$values11[4]')");
+				}
 			}
 
-			foreach ($_COOKIE['item'] as $name1 => $value)   //this is for looping as per cookies if 3 cookies then loop move
-			{
-				$values11 = explode("__", $value);
-
-				mysqli_query($link, "insert into torder values('','$client_id','$values11[1]','$values11[2]','$values11[3]','$values11[0]','$values11[4]')");
-			}
 
 			?>
 
