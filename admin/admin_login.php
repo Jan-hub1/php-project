@@ -14,7 +14,7 @@ mysqli_select_db($link,"shop");
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <link rel="stylesheet" href="css/style.css">
-   <title>Login Form</title>
+   <title>Formularz logowania</title>
 </head>
 
 <body>

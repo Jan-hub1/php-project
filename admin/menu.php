@@ -8,6 +8,7 @@
                             <ul class="submenu">
                                 <li><a href="add_product.php">Dodaj produkt</a> </li>
                                 <li><a href="display_order.php">Zamówienia</a> </li>
+                                <li><a href="display_product.php">Produkty</a> </li>
                                 
                             </ul>
                         </li>

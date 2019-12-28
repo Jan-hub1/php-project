@@ -28,13 +28,11 @@ if (isset($_POST["submit1"])) {
 
 	if (isset($_COOKIE['item']))  //sprawdź dostępność cookie
 	{
-		foreach ($_COOKIE['item'] as $name1 => $value)   //this is for looping as per cookies if 3 cookies then loop move
-		{
+		foreach ($_COOKIE['item'] as $name1 => $value) {
 			$values11 = explode("__", $value);
 			$found = 0;
-			if ($cid == $values11[0])      //this is for check same cookies available or not if available then increase qty
-			{
-				//check here for quantity add in the cart for more than available quantity
+			if ($cid == $values11[0]) {
+
 				$found = $found + 1;
 				$qty = $values11[3] + 1;
 
@@ -104,11 +102,12 @@ if (isset($_POST["submit1"])) {
 <html lang="pl">
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<title>Opis produktu</title>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="Opis...">
+	<meta name="author" content="Jan Kowalski">
+	<title>Sklep z zabawkami</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/prettyPhoto.css" rel="stylesheet">
@@ -179,11 +178,11 @@ include "header.php";
 						<!-- Koniec produktu-->
 
 						<div class="category-tab shop-details-tab">
-							<!--category-tab-->
+							<!--Kategoria-->
 							<div class="col-sm-12">
 								<ul class="nav nav-tabs">
 									<li><a href="#details" data-toggle="tab">Opis</a></li>
-									
+
 								</ul>
 							</div>
 							<div class="tab-content">
@@ -195,15 +194,9 @@ include "header.php";
 									</div>
 								</div>
 
-								
-
-								
-
-								
-
 							</div>
 						</div>
-						<!--/category-tab-->
+						<!--/Kategoria-->
 				<?php
 				}
 			}

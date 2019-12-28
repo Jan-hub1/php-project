@@ -38,7 +38,6 @@ mysqli_select_db($link, "shop");
     </div>
 </div>
 
-</div>
 
 <?php
 include "footer.php";

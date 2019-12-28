@@ -21,8 +21,6 @@
 								<li><a href=""><i class="fa fa-facebook"></i></a></li>
 								<li><a href=""><i class="fa fa-twitter"></i></a></li>
 								<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-								<li><a href=""><i class="fa fa-dribbble"></i></a></li>
-								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -44,10 +42,8 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Twoje konto</a></li>
 								<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Złóż zamówienie</a></li>
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Koszyk</a></li>
-								<li><a href=""><i class="fa fa-lock"></i> Zaloguj się</a></li>
 							</ul>
 						</div>
 					</div>

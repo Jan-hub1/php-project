@@ -1,8 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="pl">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin panel</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
@@ -35,9 +37,7 @@
             setupDashboardChart('chart1');
             setupLeftMenu();
             setSidebarHeight();
-
-
-        });
+         });
     </script>
 </head>
 
@@ -53,9 +53,8 @@
                         <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Hello Admin</li>
-                    
-                            <li><a href="logout.php">Logout</a></li>
+                            <li>Witaj Admin</li>
+                            <li><a href="logout.php">Wyloguj się</a></li>
                         </ul>
                         <br />
                         <span class="small grey"></span>
@@ -71,14 +70,13 @@
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="add_product.php"><span>Dodaj produkt</span></a> </li>
                 <li class="ic-form-style"><a href="display_order.php"><span>Zamówienia</span></a></li>
-                <li class="ic-grid-tables"><a href="table.html"><span>Data Table</span></a></li>
-                <li class="ic-gallery dd"><a href="javascript:"><span>Image Galleries</span></a>
+                <li class="ic-grid-tables"><a href="display_product.php"><span>Produkty</span></a></li>
+                <!-- <li class="ic-gallery dd"><a href="javascript:"><span>Image Galleries</span></a>
                     <ul>
                         <li><a href="image-gallery.html">Pretty Photo</a> </li>
                         <li><a href="gallery-with-filter.html">Gallery with Filter</a> </li>
                     </ul>
                 </li>
-                <li class="ic-notifications"><a href="notifications.html"><span>Notifications</span></a></li>
-
+                <li class="ic-notifications"><a href="notifications.html"><span>Notifications</span></a></li> -->
             </ul>
         </div>
